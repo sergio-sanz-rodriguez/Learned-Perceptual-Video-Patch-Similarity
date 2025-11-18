@@ -200,7 +200,7 @@ def main():
 
         if frame_scores:
             mean_lpvps = sum(frame_scores) / len(frame_scores)
-            print("========================================")
+            print("===========================")
             print(f"Number of frame pairs: {len(frame_scores)}")
             print(f"Mean LPVS: {mean_lpvps:.6f}")
         else:
