@@ -5,6 +5,7 @@ import numpy as np
 import torch
 import lpips
 import warnings
+
 warnings.filterwarnings(
     "ignore",
     message=".*torch.load.*weights_only=False.*"
@@ -195,13 +196,13 @@ def main():
 
             if args.per_frame:
                 #if frame_idx % 10 == 0:
-                print(f"Processed frame {frame_idx} | (1-LPIPS)={score:.6f}")
+                print(f"Frame {frame_idx} | LPVPS={score:.6f}")
 
         if frame_scores:
-            mean_lpips = sum(frame_scores) / len(frame_scores)
+            mean_lpvps = sum(frame_scores) / len(frame_scores)
             print("========================================")
             print(f"Number of frame pairs: {len(frame_scores)}")
-            print(f"Mean (1-LPIPS) over video: {mean_lpips:.6f}")
+            print(f"Mean LPVS: {mean_lpvps:.6f}")
         else:
             print("No valid frames processed.")
 
